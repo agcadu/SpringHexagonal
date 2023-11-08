@@ -1,0 +1,7 @@
+com\SpringHexagonal\adapter_rest\adapter\PersonController.class
+com\SpringHexagonal\adapter_rest\controller\response\ValidationExceptionHandler.class
+com\SpringHexagonal\adapter_rest\controller\IPersonApi.class
+com\SpringHexagonal\adapter_rest\controller\response\ApiError.class
+com\SpringHexagonal\adapter_rest\model\PersonRest.class
+com\SpringHexagonal\adapter_rest\controller\response\GlobalExceptionHandler.class
+com\SpringHexagonal\adapter_rest\mapper\IPersonRestMapper.class

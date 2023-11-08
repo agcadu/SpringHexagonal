@@ -1,0 +1,4 @@
+D:\cursos\SpringHexagonal\infrastructure\adapter_database\src\main\java\com\SpringHexagonal\adapter_database\adapter\PersonAdapterDb.java
+D:\cursos\SpringHexagonal\infrastructure\adapter_database\src\main\java\com\SpringHexagonal\adapter_database\model\PersonModel.java
+D:\cursos\SpringHexagonal\infrastructure\adapter_database\src\main\java\com\SpringHexagonal\adapter_database\mapper\IPersonMapper.java
+D:\cursos\SpringHexagonal\infrastructure\adapter_database\src\main\java\com\SpringHexagonal\adapter_database\repositories\IPersonsRepository.java

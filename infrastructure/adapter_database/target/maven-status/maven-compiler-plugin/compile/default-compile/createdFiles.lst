@@ -1,0 +1,5 @@
+com\SpringHexagonal\adapter_database\model\PersonModel$PersonModelBuilder.class
+com\SpringHexagonal\adapter_database\adapter\PersonAdapterDb.class
+com\SpringHexagonal\adapter_database\mapper\IPersonMapper.class
+com\SpringHexagonal\adapter_database\model\PersonModel.class
+com\SpringHexagonal\adapter_database\repositories\IPersonsRepository.class

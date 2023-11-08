@@ -1,0 +1,6 @@
+D:\cursos\SpringHexagonal\domain\src\main\java\com\SpringHexagonal\domain\ports\infrastructure\IDatabasePort.java
+D:\cursos\SpringHexagonal\domain\src\main\java\com\SpringHexagonal\domain\ports\application\IRestPort.java
+D:\cursos\SpringHexagonal\domain\src\main\java\com\SpringHexagonal\domain\exceptions\DniAlreadyExistsException.java
+D:\cursos\SpringHexagonal\domain\src\main\java\com\SpringHexagonal\domain\services\PersonService.java
+D:\cursos\SpringHexagonal\domain\src\main\java\com\SpringHexagonal\domain\model\PersonDomain.java
+D:\cursos\SpringHexagonal\domain\src\main\java\com\SpringHexagonal\domain\exceptions\PersonNotFoundException.java

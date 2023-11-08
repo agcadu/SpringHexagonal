@@ -1,0 +1,6 @@
+com\SpringHexagonal\domain\exceptions\DniAlreadyExistsException.class
+com\SpringHexagonal\domain\services\PersonService.class
+com\SpringHexagonal\domain\exceptions\PersonNotFoundException.class
+com\SpringHexagonal\domain\ports\infrastructure\IDatabasePort.class
+com\SpringHexagonal\domain\model\PersonDomain.class
+com\SpringHexagonal\domain\ports\application\IRestPort.class
