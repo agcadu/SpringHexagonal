@@ -19,5 +19,11 @@ public interface IPersonApi {
     @PostMapping("/person")
     ResponseEntity<?> createPerson(@Valid @RequestBody PersonRest personRest);
 
+    @PutMapping("/person/update")
+    ResponseEntity<?> updatePerson(@Valid @RequestBody PersonRest personRest);
+
+    @DeleteMapping("/person/{dni}")
+    ResponseEntity<?> deletePerson(@PathVariable String dni);
+
 }
 

@@ -48,5 +48,32 @@ public class PersonController implements IPersonApi {
         return new ResponseEntity<>(createdPersonRest, HttpStatus.CREATED);
     }
 
+    @Override
+    public ResponseEntity<?> updatePerson( PersonRest personRest) {
+        try {
+            PersonDomain personDomain = IPersonRestMapper.toDomain(personRest);
+            PersonDomain updatedPerson = personService.updatePerson(personDomain);
+            PersonRest updatedPersonRest = IPersonRestMapper.toRest(updatedPerson);
+
+            return ResponseEntity.ok(updatedPersonRest);
+        }catch (PersonNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiError(HttpStatus.NOT_FOUND, ex.getMessage()));
+        }catch (Exception ex) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage()));
+        }
+    }
+
+    @Override
+    public ResponseEntity<?> deletePerson(String dni) {
+        try {
+            String message = personService.deletePerson(dni);
+            return ResponseEntity.ok(message);
+        } catch (PersonNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiError(HttpStatus.NOT_FOUND, ex.getMessage()));
+        } catch (Exception ex) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage()));
+        }
+    }
+
 }
 

@@ -9,5 +9,7 @@ public interface IRestPort {
     PersonDomain getPerson(String dni);
     List<PersonDomain> getAllPersons();
     PersonDomain createPerson(PersonDomain personDomain);
+    PersonDomain updatePerson(PersonDomain personDomain);
+    String deletePerson(String dni);
 
 }

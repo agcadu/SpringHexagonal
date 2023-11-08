@@ -7,6 +7,7 @@ import com.SpringHexagonal.domain.model.PersonDomain;
 import com.SpringHexagonal.domain.ports.infrastructure.IDatabasePort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,6 +34,15 @@ public class PersonAdapterDb implements IDatabasePort {
         PersonModel personModel = IPersonMapper.toModel(personDomain);
         PersonModel savedPersonModel = databaseRepository.save(personModel);
         return IPersonMapper.toDomain(savedPersonModel);
+    }
+
+    @Override
+    @Transactional
+    public Optional<PersonDomain> deletePerson(String dni) {
+        PersonModel personModel = databaseRepository.findByDni(dni).orElseThrow();
+        databaseRepository.deleteByDni(personModel.getDni());
+        return Optional.ofNullable(IPersonMapper.toDomain(personModel));
+
     }
 
 }

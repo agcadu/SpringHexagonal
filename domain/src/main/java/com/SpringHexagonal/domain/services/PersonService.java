@@ -35,5 +35,31 @@ public class PersonService implements IRestPort {
         return databasePort.savePerson(personDomain);
     }
 
+    @Override
+    public PersonDomain updatePerson(PersonDomain personDomain) {
+
+        PersonDomain existingPerson = getPerson(personDomain.getDni());
+        if (existingPerson == null) {
+            throw new PersonNotFoundException("No se encontró la persona con DNI: " + personDomain.getDni());
+        }
+
+        existingPerson.setName(personDomain.getName());
+        existingPerson.setLastName(personDomain.getLastName());
+        existingPerson.setEmail(personDomain.getEmail());
+
+        return databasePort.savePerson(existingPerson);
+    }
+
+    @Override
+    public String deletePerson(String dni) {
+        PersonDomain existingPerson = getPerson(dni);
+            if (existingPerson == null) {
+                 throw new PersonNotFoundException("No se encontró la persona con DNI: " + dni);
+            }
+            databasePort.deletePerson(dni);
+            return "Persona con DNI " + dni + " eliminada con éxito";
+
+    }
+
 }
 

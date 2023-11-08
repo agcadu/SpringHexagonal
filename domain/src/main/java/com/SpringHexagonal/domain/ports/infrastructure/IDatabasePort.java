@@ -11,5 +11,6 @@ public interface IDatabasePort {
     Optional<PersonDomain> getPersonByDni(String dni);
     List<PersonDomain> getAllPersons();
     PersonDomain savePerson(PersonDomain personDomain);
+    Optional<PersonDomain> deletePerson(String dni);
 
 }

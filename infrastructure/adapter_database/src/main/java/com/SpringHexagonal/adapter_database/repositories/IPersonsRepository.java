@@ -11,5 +11,6 @@ public interface IPersonsRepository extends JpaRepository<PersonModel, String> {
     Optional<PersonModel> findByDni(String dni);
     List<PersonModel> findAll();
     PersonModel save(PersonModel personModel);
+    void deleteByDni(String dni);
 }
 
