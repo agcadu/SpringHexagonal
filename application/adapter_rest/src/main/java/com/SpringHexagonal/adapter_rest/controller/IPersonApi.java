@@ -1,13 +1,23 @@
 package com.SpringHexagonal.adapter_rest.controller;
 
 import com.SpringHexagonal.adapter_rest.model.PersonRest;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/v1")
 public interface IPersonApi {
 
     @GetMapping("/person/{dni}")
-    PersonRest getPerson(@PathVariable String dni);
+    ResponseEntity<?> getPerson(@PathVariable String dni);
+
+    @GetMapping("/persons")
+    ResponseEntity<List<PersonRest>> getAllPersons();
+
+    @PostMapping("/person")
+    ResponseEntity<?> createPerson(@Valid @RequestBody PersonRest personRest);
+
 }
+

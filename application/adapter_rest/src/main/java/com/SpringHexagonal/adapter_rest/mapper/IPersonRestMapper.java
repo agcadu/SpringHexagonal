@@ -3,6 +3,9 @@ package com.SpringHexagonal.adapter_rest.mapper;
 import com.SpringHexagonal.adapter_rest.model.PersonRest;
 import com.SpringHexagonal.domain.model.PersonDomain;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 public interface IPersonRestMapper {
 
@@ -30,6 +33,18 @@ public interface IPersonRestMapper {
         personRest.setEmail(personDomain.getEmail());
 
         return personRest;
+    }
+
+    static List<PersonDomain> toDomainList(List<PersonRest> personRestList) {
+        return personRestList.stream()
+                .map(IPersonRestMapper::toDomain)
+                .collect(Collectors.toList());
+    }
+
+    static List<PersonRest> toRestList(List<PersonDomain> personDomainList) {
+        return personDomainList.stream()
+                .map(IPersonRestMapper::toRest)
+                .collect(Collectors.toList());
     }
 }
 
